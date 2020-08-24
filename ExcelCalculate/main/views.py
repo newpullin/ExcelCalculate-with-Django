@@ -22,7 +22,7 @@ def login(request):
     user = User.objects.get(user_email = loginEmail)
     if user.user_password == loginPW :
         request.session['user_name'] = user.user_name
-        request.sessionp'user_email'] = user.user_email
+        request.sessionp['user_email'] = user.user_email
         return redirect('main_index')
     return redirect('main_loginFail')
 def verifyCode(request):
